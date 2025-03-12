@@ -1,0 +1,6 @@
+g++ -g -c `root-config --cflags` -I$ROOTSYS/include trackFragments.c
+g++ -g -c `root-config --cflags` -I$ROOTSYS/include OpticEle.cxx
+g++ -g -c `root-config --cflags` -I$ROOTSYS/include DriftEle.cxx
+g++ -g -c `root-config --cflags` -I$ROOTSYS/include QuadEle.cxx
+g++ -g -c `root-config --cflags` -I$ROOTSYS/include BendEle.cxx
+g++ -g -o trackFragments trackFragments.o OpticEle.o DriftEle.o QuadEle.o BendEle.o `root-config --glibs` -lEG
