@@ -33,14 +33,14 @@ int fastMCInputWriter()
 
     cfg.output_file = "output.root";
 
-    cfg.nevmax = 100000;
-    cfg.nevfreq = 10000;
+    cfg.nevmax = 100000; // Number of events to be generated
+    cfg.nevfreq = 10000; // frequency of printout 
     cfg.nevfrst = 0;
 
     // =======================
     // Geometry DON'T CHANGE!!!
     // =======================
-    cfg.geometry = {
+    cfg.geometry = { // detector geometry
         {0.0, 0.0, 112.5, 0.0352, 0.0352, 1.0},
         {0.0, 0.0, -112.5, 0.0352, 0.0352, 1.0},
         {0.2435, 0.0, 112.5, 0.112, 0.0352, 1.0},
@@ -68,7 +68,7 @@ int fastMCInputWriter()
     if(cfg.div == 1) cfg.theta_div = 0.000024; // divergence angle (in mm)
     if(cfg.ip == 1) cfg.ipbeam = {0.000, 0.000065, 0.000, 0.000065, 0.0, 0.1, 0}; // vertex smearing: x, dx, y, dy, z, dz, 0: flat 1: gaus
     if(cfg.cross == 1) cfg.cross_angle = 0.0; // crossing angle (in mm)
-    if(cfg.res == 2){
+    if(cfg.res == 2){ // Resolutin parameters for ZN and ZP (if res=2)
         cfg.ZN[0] = 2.566;
         cfg.ZN[1] = 0.103;
         cfg.ZN[2] = 0.90;
@@ -80,7 +80,7 @@ int fastMCInputWriter()
         cfg.ZP[3] = 0.05;
     }
 
-    // Readout
+    // Readout card parameters (if newreadout != 0))
     if(cfg.newreadout > 0) {
       cfg.sigma_tof = 0.25;
       cfg.baseline_mean = 0.0;
