@@ -1,0 +1,28 @@
+// Magnetic elements definition
+// drift LENGTH  START    0       RADIUS   0     0
+// bend  LENGTH  START    FIELD   1.       0     RADIUS 
+// quad  LENGTH  START    FIELD   POLE     0.    RADIUS   
+// Element position and length are in m
+// Beampipe radius is in mm
+// Magnetic field is in kgauss
+// sign of "bend" is positive if along y axis (upwards)
+// sign of "quad" is positive if quad is focusing, negative if defocusing
+// values for A(208, 82)-A(208, 82) collisions at 2680-2680 GeV
+drift    2.1     7.35     0       30.     0      0.
+drift    2.6     9.45     0       30.     0      0.
+drift    7.675   12.05    0       30.     0      0.
+drift    1.53    19.725   0       30.     0      0.
+drift    .3425   21.255   0       30.     0      0.
+drift    1.3675  21.5975  0       30.     0      0.
+quad     6.37    22.965   -67.301 31.5    0      31.5   // mqxa.1l2
+drift    2.715   29.335   0       31.5    0      0.     //
+quad     5.5     32.05    67.301  31.5    0      31.5   // mqxb.a2l2
+drift    1.0     37.55    0       31.5    0      0.     //
+quad     5.5     38.55    67.301  31.5    0      31.5   // mqxb.b2l2
+drift    2.4465	 44.05    0       31.5    0      0.     //
+quad     0.223   46.4965  -25.2   31.5    0      31.5   // mqsx.3l2
+drift    0.2455  46.7195  0       31.5    0      0.     //
+quad     6.37    46.965   -67.301 31.5    0      31.5   // mqxa.3l2
+drift    5.048   53.335   0       31.5    0      0.     //
+bend     9.45    58.383   -36.785    1.      0      33.75  //
+drift    44.077  67.833   0       399.    0      0.     // no more mag. ele

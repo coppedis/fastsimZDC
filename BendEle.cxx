@@ -1,6 +1,9 @@
 #include "BendEle.h"
 #include <TMatrixT.h>
 #include <Riostream.h>
+#include <iostream>
+
+using namespace std;
 
 //ClassImp(BendEle)
 
@@ -9,8 +12,7 @@ BendEle::BendEle() : OpticEle(){
   // Default constructor
   fBField = 0.;
   fHorBend = kFALSE;
-  fSignDefl = 1.;
-}
+  fSignDefl = 1.;}
 
 //____________________________________________________________________
 void BendEle::Propagate(TVectorT<Double_t> *xcoor, TVectorT<Double_t> *ycoor, Double_t pmom){
@@ -36,18 +38,20 @@ void BendEle::Propagate(TVectorT<Double_t> *xcoor, TVectorT<Double_t> *ycoor, Do
 //____________________________________________________________________
 void BendEle::PrintStatus() const {
   // prints out the data members
-  std::cout<<"======================================================\n";
-  std::cout<<" BendElement object\n";
-  std::cout<<"Starting Z coordinate "<<fZpos<<"; length "<<fLength<<std::endl;
-  std::cout<<"B Field "<<fBField<<std::endl;
+  cout<<"======================================================\n";
+  cout<<" BendElement object\n";
+//  cout<<GetName()<<endl;
+//  cout<<GetTitle()<<endl;
+  cout<<"Starting Z coordinate "<<fZpos<<"; length "<<fLength<<endl;
+  cout<<"B Field "<<fBField<<endl;
   if(fHorBend){
-    std::cout<<"Bending plane: Horizontal \n";
+    cout<<"Bending plane: Horizontal \n";
   }
   else {
-    std::cout<<"Bending plane: Vertical \n";
+    cout<<"Bending plane: Vertical \n";
   }
-  std::cout<<"Aperture type is radial - aperture radius =  "<<fAperture1<<std::endl;
-  std::cout<<"======================================================\n";
+  cout<<"Aperture type is radial - aperture radius =  "<<fAperture1<<endl;
+  cout<<"======================================================\n";
 }
 //____________________________________________________________________
 void BendEle::SetParEle(Double_t val0, Double_t val1 ,Double_t val2, Double_t val3, Bool_t val4, Double_t val5)  {
@@ -61,4 +65,3 @@ void BendEle::SetParEle(Double_t val0, Double_t val1 ,Double_t val2, Double_t va
   fAperture1 = val5;
   fAperture2 = val5;
 }
-
